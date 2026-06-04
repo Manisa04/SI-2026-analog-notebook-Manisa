@@ -1,3 +1,3 @@
 # Diary
 
-Maintain your daily diary on this page.
+**Day 1 (May 25, Mon)**
