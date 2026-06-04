@@ -24,7 +24,7 @@
 - **Day 4 (May 28,2026 Thursday):**
   - Studied the frequency response of linear circuits, including low-pass and high-pass filter characteristics.
   - Learned about cutoff frequency, gain variation, and bandwidth concepts.
-  - Attended the introductory laboratory session on the ADALM2000 instrument and became familiar with its features and applications.
+  - Introductory laboratory session on the ADALM2000 instrument and became familiar with its features and applications.
 
 - **Day 5 (May 29,2026 Friday):**
   - Derived and analyzed the Thevenin equivalent model of a MEMS microphone.
