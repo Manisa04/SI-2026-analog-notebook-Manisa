@@ -31,3 +31,19 @@
   - Studied the Analog Front-End (AFE) of an amplifier and its functional blocks.
   - Worked on a worksheet involving microphone Thevenin modeling, amplifier analysis, and the single-pole model of the OPA344 operational amplifier.
   - Continued hands-on experiments and measurements using the ADALM2000 platform.
+
+- **Day 6 (June 1,2026 Monday):**
+  - Learned the modeling of a MEMS microphone and its equivalent Analog Front-End (AFE) circuit.
+  - Studied the signal path from the microphone to the amplifier stage and analyzed the associated circuit components.
+  - Performed experiments on voltage divider circuits and verified Thevenin equivalent circuits through simulation and practical measurements.
+
+- **Day 7 (June 2,2026 Tuesday):**
+  - Introduction to the IC design flow, covering the major stages involved in analog integrated circuit design.
+  - Learned about the design cycle from specification and schematic design to simulation, layout, verification, and fabrication.
+  - Performed laboratory experiments involving the MEMS microphone and Analog Front-End (AFE), including testing and characterization of their electrical behavior.
+
+- **Day 8 (June 3,2026 Wednesday):**
+  - Studied passive IC devices, including resistors, capacitors, and their implementation in integrated circuits.
+  - Learned the fundamentals of semiconductors, including charge carriers, doping, PN junctions, and semiconductor device operation.
+  - Performed simulation and analysis of a microphone-based Analog Front-End (AFE) using xschem and ngspice.
+  
