@@ -44,3 +44,13 @@
   - Learned the fundamentals of semiconductors, including charge carriers, doping, PN junctions, and semiconductor device operation.
   - Performed simulation and analysis of a microphone-based Analog Front-End (AFE) using xschem and ngspice.
   
+- **Day 9 (June 4,2026 Thursday):**
+  - Studied semiconductor IC devices with a focus on MOS devices, including their structure, operation, and electrical characteristics.
+  - Learned the IC design process, covering the complete design flow from circuit specification and schematic design to simulation, layout, verification, and fabrication.
+  - Completed the Siliwiz assignment, gaining hands-on experience in MOS device analysis and semiconductor concepts.
+
+- **Day 10 (June 5,2026 Friday):**
+  - Performed laboratory exercises on parameter extraction of MOS transistors using simulation tools.
+  - Studied the modeling of MOS transistors in SPICE based on the slides by Kang et al.
+  - Learned about various MOSFET model parameters and their significance in accurately predicting device behavior during circuit simulation.
+  - Gained practical experience in analyzing transistor characteristics and validating simulation results using SPICE models.
