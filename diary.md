@@ -54,3 +54,32 @@
   - Studied the modeling of MOS transistors in SPICE based on the slides by Kang et al.
   - Learned about various MOSFET model parameters and their significance in accurately predicting device behavior during circuit simulation.
   - Gained practical experience in analyzing transistor characteristics and validating simulation results using SPICE models.
+
+- **Day 11 (June 8,2026 Monday):**
+  - Studied the fundamentals of MOS transistors, including their structure, operation, and working principles.
+  - Learned about different types of transistors, including BJTs, FETs, and MOSFETs, and compared their characteristics.
+  - Revised basic circuit analysis concepts and their application in transistor-based circuits.
+
+- **Day 12 (June 9,2026 Tuesday):**
+  - Studied fundamental circuit analysis techniques used in analog circuit design.
+  - Learned to apply Kirchhoff's Current Law (KCL) and Kirchhoff's Voltage Law (KVL) for circuit analysis.
+  - Solved circuit problems using Superposition Theorem and discussed the principle of Conservation of Energy in electrical circuits.
+
+- **Day 13 (June 10,2026 Wednesday):**
+  - Studied the working principle and operation of current mirrors.
+  - Learned how to analyze current mirror circuits using KCL and KVL.
+  - Understood the mechanism of current replication in MOS current mirrors.
+  - Studied the fundamentals and operation of differential amplifiers.
+  - Designed and simulated various current mirror circuits using xschem and ngspice to observe their performance.
+
+- **Day 14 (June 11,2026 Thursday):**
+  - Studied the cascode current mirror and its advantages over the basic current mirror.
+  - Designed the schematic of a cascode current mirror and performed DC, AC, and transient analyses using xschem and ngspice.
+  - Designed NMOS and PMOS current mirror circuits and analyzed their output characteristics.
+  - Investigated the effect of varying the transistor W/L ratio on the performance of current mirror circuits.
+
+- **Day 15 (June 12,2026 Friday):**
+  - Studied the working principle and applications of differential amplifiers.
+  - Designed and simulated the schematics of differential amplifiers and operational amplifiers (Op-Amps).
+  - Analyzed the response of Op-Amps under different input conditions and studied their operating characteristics.
+  - Completed all pending simulations, documentation, and coursework assigned during the internship.
