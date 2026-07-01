@@ -246,3 +246,102 @@ plot v(vout)
 The average output voltage of the RC circuit was obtained successfully. The output waveform reaches a steady-state average value after repeated charging and discharging of the capacitor.
 
 ![RC Average Output](../doc/RC-CKT2.png)
+
+### a. The RC high-pass filter was simulated to measure the rise time and fall time of the output waveform.
+
+```spice
+* RC high pass filter
+
+C1 Vin Vout 1p
+R1 Vout 0 1k
+
+Vpulse Vin 0 PULSE(0 5 0 10p 10p 10n 20n)
+
+* Rise Time
+.measure tran trise
++TRIG V(Vout) VAL=0.5 RISE=1
++TARG V(Vout) VAL=4.5 RISE=1
+
+* Fall Time
+.measure tran tfall
++TRIG V(Vout) VAL=4.5 FALL=1
++TARG V(Vout) VAL=0.5 FALL=1
+
+.tran 1p 50n
+
+.control
+run
+plot V(Vin) V(Vout)
+.endc
+
+.end
+```
+
+### Observation
+
+The rise time and fall time of the RC high-pass filter were measured successfully. The output waveform exhibits the expected transient response, where the capacitor passes high-frequency components while attenuating the steady-state (DC) component.
+
+![RC High Pass Filter Output](../doc/CR-CKT.png)
+
+### b. The CR circuit was simulated to determine the effective time constant.
+
+A CR high-pass circuit with a capacitance of **50 pF** was simulated to determine its effective time constant by observing the transient response of the output waveform.
+
+```spice
+* CR ckt with c=50p
+
+C1 Vin Vout 50p
+R1 Vout 0 1k
+
+Vpulse Vin 0 PULSE(0 5 0 10p 10p 10n 20n)
+
+* Effective Time Constant
+.measure tran tau
++TRIG V(Vout) VAL=3.15 FALL=1
++TARG V(Vout) VAL=1.85 FALL=1
+
+.tran 1p 300n
+
+.control
+run
+plot V(Vin) V(Vout)
+.endc
+
+.end
+```
+### Observation
+
+The effective time constant of the CR circuit was measured successfully. The output waveform shows the expected high-pass transient response, where the output initially changes rapidly and then decays exponentially toward zero with the circuit time constant.
+
+![CR Circuit Effective Time Constant](../doc/CR-CKT1.png)
+
+### c. CR Circuit Average Output Voltage
+
+The average output voltage of the CR circuit was measured.
+
+```spice
+* CR ckt average output voltage
+
+C1 Vin Vout 50p
+R1 Vout 0 1k
+
+Vpulse Vin 0 PULSE(0 5 0 10p 10p 10n 20n)
+
+* Average output voltage
+.measure tran avgout AVG V(Vout) FROM=60n TO=100n
+
+.tran 1p 100n
+
+.control
+run
+plot V(Vout)
+.endc
+
+.end
+```
+
+### Observation
+
+The average output voltage of the CR circuit was obtained successfully. The output waveform exhibits the expected exponentially decaying response of a high-pass RC circuit, and the measured average output voltage agrees with the transient behavior of the circuit.
+
+![CR Circuit Average Output Voltage](doc/CR-CKT2.png)
