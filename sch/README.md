@@ -192,3 +192,133 @@ The AC simulation showed that the amplifier provides high gain within the mid-ba
 ### Result
 
 The AC analysis confirmed proper differential amplifier operation. A high mid-band gain was obtained with the expected roll-off and phase variation at higher frequencies, validating the designed frequency response.
+
+# Current Mirror Circuits
+
+## PMOS Current Mirror
+
+The PMOS current mirror was implemented using matched PMOS transistors from the TT model library. A DC sweep was performed to verify the current mirroring action and observe the output voltage and reference current.
+
+### DC Analysis Commands
+
+```spice
+.dc V2 0 1.8 0.01
+
+.control
+run
+
+plot v(Vout)
+plot i(V1)
+
+.endc
+.end
+```
+
+### Observation
+
+The output voltage remained nearly constant throughout the DC sweep while the mirrored current gradually increased and settled close to the reference current. This confirms proper current mirroring with good current matching.
+
+### Simulation Result
+
+![PMOS Current Mirror Output](PMOS_curr_mirr_op.png)
+
+### Result
+
+The PMOS current mirror successfully replicated the reference current at the output branch. The simulation verified stable output voltage and accurate current mirroring over the applied voltage range.
+
+---
+
+# NMOS Current Mirror
+
+The NMOS current mirror was implemented using matched NMOS transistors and simulated to verify transient behavior. The output voltage and mirrored current were observed during the simulation.
+
+### Transient Analysis Commands
+
+```spice
+.tran 1n 10n
+
+.control
+run
+
+plot v(Vout)
+plot i(V1)
+
+.endc
+.end
+```
+
+### Observation
+
+The output voltage rapidly reached its steady-state value, while the mirrored current stabilized near the desired reference current after a short transient interval. The circuit exhibited stable operation without oscillations.
+
+### Simulation Result
+
+![NMOS Current Mirror Output](NMOS_curr_mirr_op.png)
+
+### Result
+
+The NMOS current mirror correctly reproduced the reference current at the output. The transient simulation confirmed fast settling time and stable current mirroring operation.
+
+# Cascoded PMOS Current Mirror
+
+The cascoded PMOS current mirror was implemented using matched PMOS transistors from the TT model library. A DC sweep was performed to verify the current mirroring operation while observing both output node voltages and the mirrored current.
+
+## DC Analysis Commands
+
+```spice
+.dc V2 0 1.8 0.01
+
+.control
+run
+
+plot v(Vout1) v(Vout2)
+plot i(V1)
+
+.endc
+.end
+```
+
+## Observation
+
+The output voltages **Vout1** and **Vout2** remained nearly constant during the DC sweep, while the mirrored current increased rapidly and settled close to the reference current. The cascode configuration improved output resistance and maintained better current matching compared to the basic current mirror.
+
+## Simulation Result
+
+![PMOS Cascoded Current Mirror](PMOS_cas_curr_mirr_op.png)
+
+## Result
+
+The cascoded PMOS current mirror successfully mirrored the reference current with improved output resistance and excellent current stability over the operating voltage range.
+
+---
+
+# Cascoded NMOS Current Mirror
+
+The cascoded NMOS current mirror was implemented using matched NMOS transistors. A DC sweep was performed to study the voltages at the four output nodes and verify the mirrored current.
+
+## DC Analysis Commands
+
+```spice
+.dc V2 0 1.8 0.01
+
+.control
+run
+
+PLOT v(Vout1) v(Vout2) v(Vout3) v(Vout4)
+PLOT i(V1)
+
+.endc
+.end
+```
+
+## Observation
+
+During the DC sweep, the output node voltages changed according to the applied input voltage while maintaining proper biasing of the cascode transistors. The mirrored current quickly reached the reference value and remained nearly constant throughout the sweep, demonstrating high output resistance and improved current regulation.
+
+## Simulation Result
+
+![NMOS Cascoded Current Mirror](NMOS_cas_curr_mirr_op.png)
+
+## Result
+
+The cascoded NMOS current mirror accurately reproduced the reference current while providing better output impedance and current stability than the conventional current mirror.
