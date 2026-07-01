@@ -143,7 +143,7 @@ PLOT v(Vm3) v(Vm4) v(V3)
 .end
 ```
 
-![Differential Amplifier DC Output](../doc/Diff_ampli.png)
+![Differential Amplifier DC Output](../doc/Differential_amplifier.png)
 ### Observation
 
 The DC sweep verified the operation of the differential amplifier. The branch currents varied with the input voltage while the node voltages changed according to the differential pair operation. The active load and current mirror biased the circuit correctly over the operating range.
@@ -162,7 +162,7 @@ The differential amplifier achieved the expected DC operating point. The current
 
 The differential inputs were excited using equal-amplitude AC sources with opposite phases. AC analysis was performed to determine the differential gain and phase response of the amplifier.
 
-![Differential Amplifier AC Response](../doc/Diff_amp_ac.png)
+![Differential Amplifier AC Response](../doc/Diff_amp_AC_analysis.png)
 ### AC Analysis Commands
 
 ```spice
