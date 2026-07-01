@@ -12,7 +12,7 @@ Commands used are:
 - `pwd`
 - `cd`
 - `ls` 
-- - `mkdir`
+- `mkdir`
 - `touch`
 - `rm`
 - `rmdir` and others
