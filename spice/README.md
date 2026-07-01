@@ -104,3 +104,145 @@ PLOT V(vout)
 The transient response of the RC circuit was analyzed using a step input. The capacitor charges exponentially when the input pulse goes high and discharges exponentially when the pulse returns low. The simulation verifies the expected charging and discharging characteristics of a first-order RC circuit.
 
 ![RC Step Response](../doc/RC-STEP.png)
+
+## 2. RC CIRCUIT FREQUENCY RESPONSE
+
+The frequency response of the RC circuit was analyzed successfully using AC analysis.
+
+```spice
+* This is a pulse stimulus with low voltage (v1=0V) and high voltage (v2=5V)
+Vpulse vin 0 AC=1 PULSE(0 5 2n 10p 10p 10n 20n)
+
+.MEASURE TRAN tr1090 TRIG v(vout) VAL=0.5 RISE=1 TARG v(vout) VAL=4.5 RISE=1
+
+* Transient Analysis
+*.TRAN step-size total-sim-time
+*.TRAN 1p 30n
+
+*.AC DEC 100 10 10e9
+*.MEAS AC vdbmax MAX vdb(vout)
+*.MEAS AC f3db WHEN vdb(vout)=v3db fall=last
+
+.control
+save all
+AC DEC 100 10 10e9
+MEAS AC vdbmax MAX vdb(vout)
+LET v3db = vdbmax - 3.0
+MEAS AC f3db WHEN vdb(vout)=v3db fall=last
+write rc-step.raw
+
+plot vdb(vout)
+
+.endc
+
+.end
+```
+
+### Observation
+
+The AC frequency response of the RC circuit was analyzed using a Bode plot. The circuit exhibits a low-pass filter characteristic, maintaining nearly constant gain at low frequencies while attenuating higher-frequency signals beyond the cutoff frequency. The simulation verifies the expected first-order RC filter behavior.
+
+![RC Frequency Response](../doc/RC-BODE.png)
+
+## 1. RC CIRCUIT AS LOW PASS FILTER
+
+### a. The RC circuit was simulated to measure the rise time and fall time of the output waveform.
+
+```spice
+* RC CIRCUIT
+
+R1 Vin Vout 1k
+C1 Vout 0 1p
+
+* Pulse Input
+Vpulse Vin 0 PULSE(0 5 0 10p 10p 10n 20n)
+
+* Measure Rise Time (10% to 90%)
+.measure tran trise
++TRIG V(Vout) VAL=0.5 RISE=1
++TARG V(Vout) VAL=4.5 RISE=1
+
+* Measure Fall Time (90% to 10%)
+.measure tran tfall
++TRIG V(Vout) VAL=4.5 FALL=1
++TARG V(Vout) VAL=0.5 FALL=1
+
+.TRAN 1p 50n
+
+.control
+run
+plot V(Vin) V(Vout)
+.endc
+
+.end
+```
+
+### Observation
+
+The rise time and fall time of the RC low-pass filter were measured successfully. The output waveform shows the characteristic charging and discharging behavior of the capacitor, where the output gradually follows the input pulse due to the RC time constant.
+
+![RC Circuit Step Response](doc/RC-CKT.png)
+
+### b. The RC circuit was simulated to determine the effective time constant.
+
+#### RC Circuit with C = 50pF
+
+```spice
+* RC CKT WITH C=50p
+
+R1 vin vout 1k
+C1 vout 0 50p
+
+Vpulse vin 0 PULSE(0 5 0 10p 10p 10n 20n)
+
+* Effective time constant
+.measure tran tau
++TRIG v(vout) VAL=3.15 RISE=1
++TARG v(vout) VAL=1.85 FALL=1
+
+.TRAN 1p 300n
+
+.control
+run
+plot v(vin) v(vout)
+.endc
+
+.end
+```
+
+### Observation
+
+The effective time constant of the RC circuit with a 50 pF capacitor was measured successfully. The output waveform exhibits the expected charging and discharging behavior, validating the transient response of the RC network.
+
+![RC Circuit Time Constant](doc/RC-CKT1.png)
+
+### c. RC Average Output
+
+The average output voltage of the RC circuit was measured.
+
+```spice
+* RC average output
+
+R1 vin vout 1k
+C1 vout 0 50p
+
+Vpulse vin 0 PULSE(0 5 0 10p 10p 10n 20n)
+
+* Average output voltage
+.measure tran avgout AVG v(vout) FROM=40n TO=80n
+
+.tran 1p 300n
+
+.control
+run
+plot v(vout)
+.endc
+
+.end
+```
+
+### Observation
+
+The average output voltage of the RC circuit was obtained successfully. The output waveform reaches a steady-state average value after repeated charging and discharging of the capacitor.
+
+![RC Average Output](doc/RC-CKT2.png)
