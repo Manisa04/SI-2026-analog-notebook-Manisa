@@ -124,11 +124,7 @@ Both MOS models exhibited the expected linear √(2Id) versus VGS relationship i
 
 The comparison confirmed that the Level-49 BSIM model more accurately predicts practical MOSFET characteristics than the Level-1 model. Although both models follow the same general trend, the BSIM model incorporates second-order effects, making it more suitable for accurate CMOS circuit simulation and modern VLSI design.
 
- Differential Amplifier
-
-## Circuit Diagram
-
-The differential amplifier was implemented using matched NMOS and PMOS transistors from the TT model library. A current mirror provides the tail current while PMOS transistors form the active load. DC and AC analyses were carried out using NGSpice to study the operating point and frequency response.
+## Differential Amplifier
 
 ### DC Analysis Commands
 
@@ -147,6 +143,7 @@ PLOT v(Vm3) v(Vm4) v(V3)
 .end
 ```
 
+![Differential Amplifier DC Output](../doc/Diff_ampli.png)
 ### Observation
 
 The DC sweep verified the operation of the differential amplifier. The branch currents varied with the input voltage while the node voltages changed according to the differential pair operation. The active load and current mirror biased the circuit correctly over the operating range.
@@ -165,6 +162,7 @@ The differential amplifier achieved the expected DC operating point. The current
 
 The differential inputs were excited using equal-amplitude AC sources with opposite phases. AC analysis was performed to determine the differential gain and phase response of the amplifier.
 
+![Differential Amplifier AC Response](../doc/Diff_amp_ac.png)
 ### AC Analysis Commands
 
 ```spice
