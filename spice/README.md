@@ -71,3 +71,36 @@ The drain current increases with increasing gate-source voltage, demonstrating t
 ### √ID vs VGS Plot
 
 ![Square Root ID vs VGS Plot](../doc/ID%20vs%20VGS2.png)
+
+## 1. RC CIRCUIT WITH STEP INPUT
+
+The RC step response circuit was simulated successfully.
+
+```spice
+Title: RC Step Response
+
+* RC Circuit
+R1 vin vout 1e3
+C1 vout 0 1p
+
+* Pulse Stimulus
+Vpulse vin 0 PULSE(0 5 2n 10p 10p 10n 20n)
+
+.MEASURE TRAN tr1090 TRIG V(vout) VAL=0.5 RISE=1 TARG V(vout) VAL=4.5 RISE=1
+
+* Transient Analysis
+.TRAN 1p 30n
+
+.control
+RUN
+PLOT V(vout)
+.endc
+
+.end
+```
+
+### Observation
+
+The transient response of the RC circuit was analyzed using a step input. The capacitor charges exponentially when the input pulse goes high and discharges exponentially when the pulse returns low. The simulation verifies the expected charging and discharging characteristics of a first-order RC circuit.
+
+![RC Step Response](../doc/RC-STEP.png)
