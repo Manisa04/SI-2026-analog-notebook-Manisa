@@ -28,7 +28,7 @@ PLOT V(vout)
 
 The output voltage is approximately half of the input voltage due to the equal resistor values used in the voltage divider circuit. The transient response confirms the expected voltage division behavior.
 
-![Voltage Divider Output](doc/VOLTAGE%20DIVIDER1.png)
+![Voltage Divider Output](../doc/VOLTAGE%20DIVIDER1.png)
 
 ## 2. ID vs VGS
 
