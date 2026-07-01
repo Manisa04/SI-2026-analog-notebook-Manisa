@@ -344,4 +344,4 @@ plot V(Vout)
 
 The average output voltage of the CR circuit was obtained successfully. The output waveform exhibits the expected exponentially decaying response of a high-pass RC circuit, and the measured average output voltage agrees with the transient behavior of the circuit.
 
-![CR Circuit Average Output Voltage](doc/CR-CKT2.png)
+![CR Circuit Average Output Voltage](../doc/CR-CKT2.png)
