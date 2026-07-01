@@ -26,11 +26,11 @@ A stable sinusoidal waveform was observed on the oscilloscope display. The gener
 
 **INPUT SIGNAL**
 
-![Frequency Generator Input](Freq gen ip.png)
+![Frequency Generator Input](Freq_gen_ip.png)
 
 **OUTPUT SIGNAL**
 
-![Frequency Generator Output](Freq gen op.png)
+![Frequency Generator Output](Freq_gen_op.png)
 
 ### Result
 
