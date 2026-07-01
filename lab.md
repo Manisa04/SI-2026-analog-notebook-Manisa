@@ -11,7 +11,11 @@ Commands used are:
 - `echo`
 - `pwd`
 - `cd`
-- `ls` and others
+- `ls` 
+- - `mkdir`
+- `touch`
+- `rm`
+- `rmdir` and others
 
 ```bash
 cd
@@ -19,18 +23,6 @@ echo "HELLO, LINUX"
 pwd
 ls
 cd ..
-```
-
-## 2. FILE AND DIRECTORY HANDLING COMMANDS
-
-Commands used are:
-
-- `mkdir`
-- `touch`
-- `rm`
-- `rmdir` and others
-
-```bash
 cd -
 mkdir manisa
 cd manisa
@@ -47,3 +39,6 @@ rmdir dir3
 
 pwd
 ```
+
+
+
