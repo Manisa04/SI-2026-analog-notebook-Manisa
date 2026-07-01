@@ -62,8 +62,12 @@ PLOT (2*Vid2#branch)^0.5 VS V(D)
 ```
 ### Observation
 
-The drain current ($I_D$) increases with increasing gate-source voltage ($V_{GS}$). The plotted characteristics verify the square-law behavior of the NMOS transistor operating in the saturation region. Different body bias ($V_{SB}$) values shift the characteristics due to the body effect.
+The drain current increases with increasing gate-source voltage, demonstrating the expected square-law behavior of the NMOS transistor in the saturation region. The characteristics also illustrate the effect of body bias on the device operation.
 
-![ID vs VGS Plot](doc/ID%20vs%20VGS3.png)
+### ID vs VGS Plot
 
-![Square Root ID vs VGS Plot](doc/ID%20vs%20VGS2.png)
+![ID vs VGS Plot](../doc/ID%20vs%20VGS3.png)
+
+### √ID vs VGS Plot
+
+![Square Root ID vs VGS Plot](../doc/ID%20vs%20VGS2.png)
