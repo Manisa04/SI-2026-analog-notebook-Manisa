@@ -181,7 +181,7 @@ plot V(Vin) V(Vout)
 
 The rise time and fall time of the RC low-pass filter were measured successfully. The output waveform shows the characteristic charging and discharging behavior of the capacitor, where the output gradually follows the input pulse due to the RC time constant.
 
-![RC Circuit Step Response](doc/RC-CKT.png)
+![RC Circuit Step Response](../doc/RC-CKT.png)
 
 ### b. The RC circuit was simulated to determine the effective time constant.
 
@@ -214,7 +214,7 @@ plot v(vin) v(vout)
 
 The effective time constant of the RC circuit with a 50 pF capacitor was measured successfully. The output waveform exhibits the expected charging and discharging behavior, validating the transient response of the RC network.
 
-![RC Circuit Time Constant](doc/RC-CKT1.png)
+![RC Circuit Time Constant](../doc/RC-CKT1.png)
 
 ### c. RC Average Output
 
@@ -245,4 +245,4 @@ plot v(vout)
 
 The average output voltage of the RC circuit was obtained successfully. The output waveform reaches a steady-state average value after repeated charging and discharging of the capacitor.
 
-![RC Average Output](doc/RC-CKT2.png)
+![RC Average Output](../doc/RC-CKT2.png)
