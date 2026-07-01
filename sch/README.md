@@ -1,6 +1,6 @@
 # Xschem Schematics
 
-# Lab 7: Microphone Amplifier Modeling and Simulation
+# Microphone Amplifier Modeling and Simulation
 
 ## AC Simulation of the Microphone Amplifier
 
