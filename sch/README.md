@@ -28,6 +28,8 @@ The power supply gain response was successfully obtained. The amplifier exhibite
 
 ### AC Response
 
+![Power Supply Gain (PSRR)](MEM2.png)
+
 ![Power Supply Gain (PSRR)](MEM21.png)
 
 ### Result
