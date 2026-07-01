@@ -123,3 +123,74 @@ Both MOS models exhibited the expected linear √(2Id) versus VGS relationship i
 ### Result
 
 The comparison confirmed that the Level-49 BSIM model more accurately predicts practical MOSFET characteristics than the Level-1 model. Although both models follow the same general trend, the BSIM model incorporates second-order effects, making it more suitable for accurate CMOS circuit simulation and modern VLSI design.
+
+ Differential Amplifier
+
+## Circuit Diagram
+
+The differential amplifier was implemented using matched NMOS and PMOS transistors from the TT model library. A current mirror provides the tail current while PMOS transistors form the active load. DC and AC analyses were carried out using NGSpice to study the operating point and frequency response.
+
+### DC Analysis Commands
+
+```spice
+.dc V4 0 1.8 0.01
+
+.control
+run
+
+PLOT i(V2) i(V5) i(V3)
+
+PLOT v(Vm3) v(Vm4) v(V3)
+
+.endc
+
+.end
+```
+
+### Observation
+
+The DC sweep verified the operation of the differential amplifier. The branch currents varied with the input voltage while the node voltages changed according to the differential pair operation. The active load and current mirror biased the circuit correctly over the operating range.
+
+### Simulation Result
+
+![Differential Amplifier DC Output](../doc/Diff_ampli_op.png)
+
+### Result
+
+The differential amplifier achieved the expected DC operating point. The current mirror supplied the required bias current, and the differential pair operated correctly with balanced node voltages.
+
+---
+
+# AC Analysis of Differential Amplifier
+
+The differential inputs were excited using equal-amplitude AC sources with opposite phases. AC analysis was performed to determine the differential gain and phase response of the amplifier.
+
+### AC Analysis Commands
+
+```spice
+.ac dec 10 1 10G
+
+.control
+run
+
+PLOT v(Vin1) v(Vin2)
+PLOT v(Vm3)
+PLOT vdb(Vm3)
+PLOT ph(vm3)*(180/pi)
+
+.endc
+
+.end
+```
+
+### Observation
+
+The AC simulation showed that the amplifier provides high gain within the mid-band region. The gain gradually decreases at higher frequencies due to the internal capacitances of the MOS transistors, while the phase shifts progressively with increasing frequency.
+
+### Simulation Result
+
+![Differential Amplifier AC Response](../doc/Diff_amp_ac_op.png)
+
+### Result
+
+The AC analysis confirmed proper differential amplifier operation. A high mid-band gain was obtained with the expected roll-off and phase variation at higher frequencies, validating the designed frequency response.
